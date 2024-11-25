@@ -26,6 +26,16 @@
         let y = 0;
 
         portfolio.setAttribute("visible", true);
+        if (portfolio.getAttribute("visible", true)) {
+                document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-mp4");
+                document.querySelector("#paintandquest-video-mp4").play();
+                document.querySelector("#paintandquest-video-mp4").pause();
+
+              } else {
+                document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
+                document.querySelector("#paintandquest-video-webm").play();
+                document.querySelector("#paintandquest-video-webm").pause();
+              }
 
         const showPortfolioItem = (item) => {
             document.querySelector("#portfolio-item" + item).setAttribute("visible", 0 === item);
@@ -196,7 +206,7 @@
           <a-entity visible=false id="portfolio-panel" position="0 0 -0.01">
             <a-entity id="portfolio-item0">
               <a-video id="paintandquest-video-link" webkit-playsinline playsinline width="1" height="0.552" position="0 0 0"></a-video>
-              <a-image id="paintandquest-preview-button" class="clickable" src="#paintandquest-preview" alpha-test="0.5" position="0 0 0" height="0.552" width="1">
+              <a-image id="paintandquest-preview-button" class="clickable" src="#icon-play" alpha-test="0.5" position="0 0 0.01" height="0.2" width="0.2">
               </a-image>
             </a-entity>
             
