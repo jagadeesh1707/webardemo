@@ -18,12 +18,12 @@
 
     <script>
       
+      // CTA Button Container
       const showInfo = (done) => {
         const cta = document.querySelector("#cta-panel");
         const downloadButton = document.querySelector("#download-button");
 
         let y = 0;
-        let currentTab = '';
 
         cta.setAttribute("visible", true);
 
@@ -31,6 +31,7 @@
             document.querySelector("#cta-item" + item).setAttribute("visible", 0 === item);
         }
 
+        //Button Animation Down
         const id = setInterval(() => {
           y -= 0.008;
           if (y <= -0.4) {
@@ -50,6 +51,7 @@
         }, 15);
       }
 
+      // Media Player Container
       const showPortfolio = (done) => {
         const portfolio = document.querySelector("#portfolio-panel");
         const paintandquestPreviewButton = document.querySelector("#paintandquest-preview-button");
@@ -73,6 +75,8 @@
         const showPortfolioItem = (item) => {
             document.querySelector("#portfolio-item" + item).setAttribute("visible", 0 === item);
         }
+
+        //Media Player Animation Up
         const id = setInterval(() => {
           y += 0.008;
           if (y >= 0.6) {
@@ -81,7 +85,7 @@
             
 
             paintandquestPreviewButton.addEventListener('click', () => {
-              if(paintandquestPreviewButton.getAttribute("visible", true)) {
+              if(paintandquestPreviewButton.getAttribute("visible", true)) { //Play Video
                 paintandquestPreviewButton.setAttribute("visible", false);
                 const testVideo = document.createElement( "video" );
                 const canplayWebm = testVideo.canPlayType( 'video/webm; codecs="vp8, vorbis"' );
@@ -92,7 +96,7 @@
                   document.querySelector("#paintandquest-video-link").setAttribute("src", "#paintandquest-video-webm");
                   document.querySelector("#paintandquest-video-webm").play();
                 }
-              } else {
+              } else { // Pause Video
                 paintandquestPreviewButton.setAttribute("visible", true);
                 const testVideo = document.createElement( "video" );
                 const canplayWebm = testVideo.canPlayType( 'video/webm; codecs="vp8, vorbis"' );
@@ -238,7 +242,6 @@
           <img id="paintandquest-preview" src="video\paintandquest-preview.png" />
           <video id="paintandquest-video-mp4" autoplay="false" loop="true" src="https://development-monolith.sgp1.digitaloceanspaces.com/AVGC/paintandquest.mp4"></video>
           <video id="paintandquest-video-webm" autoplay="false" loop="true" src="https://development-monolith.sgp1.digitaloceanspaces.com/AVGC/paintandquest.mp4"></video>
-          
         </a-assets>
 
         <!-- AR Camera Config -->
